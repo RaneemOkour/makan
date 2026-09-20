@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Places &amp; Experiences | MAKAN</title>
+</head>
+<body>
+    <!-- 01. MAIN NAVIGATION -->
+    <header>
+        <a href="../index.html" aria-label="Makan Home">
+            <strong>MAKAN | مكان</strong>
+        </a>
+        <nav aria-label="Primary Navigation">
+            <ul>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="experiences.html">Experiences</a></li>
+                <li><a href="places.html">Places</a></li>
+                <li><a href="hosts.html">Hosts</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <a href="favorites.html" aria-label="Saved Favorites">&#9825; Favorites</a>
+            <a href="login.html">Sign In</a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- 02. EXPLORE HERO -->
+        <section id="explore-header" aria-labelledby="explore-title">
+            <h1 id="explore-title">Explore Makan</h1>
+            <p>Search across destinations, authentic local experiences, and community hosts throughout Jordan.</p>
+        </section>
+
+        <!-- 03. SEARCH & FILTERS PANEL (From Notebook Page 16) -->
+        <section id="explore-controls" aria-labelledby="controls-heading">
+            <h2 id="controls-heading">Search &amp; Filter Options</h2>
+
+            <form action="#" method="get">
+                <!-- Search Input -->
+                <div>
+                    <label for="search-query">Search</label>
+                    <input type="search" id="search-query" name="q" placeholder="Search for experiences, places, or hosts...">
+                </div>
+
+                <!-- Location Filter -->
+                <div>
+                    <label for="filter-location">Location</label>
+                    <select id="filter-location" name="location">
+                        <option value="">All Locations</option>
+                        <option value="maan-petra">Ma'an &amp; Petra</option>
+                        <option value="wadi-rum">Wadi Rum</option>
+                        <option value="amman">Amman &amp; Al-Weibdeh</option>
+                        <option value="as-salt">As-Salt</option>
+                        <option value="jerash">Jerash</option>
+                        <option value="ajloun">Ajloun</option>
+                    </select>
+                </div>
+
+                <!-- Category Filter -->
+                <div>
+                    <label for="filter-category">Category</label>
+                    <select id="filter-category" name="category">
+                        <option value="">All Categories</option>
+                        <option value="nature">🌿 Nature</option>
+                        <option value="culture">🏺 Culture</option>
+                        <option value="food">🍴 Food</option>
+                        <option value="crafts">🎨 Art &amp; Crafts</option>
+                        <option value="adventure">🥾 Adventure</option>
+                        <option value="photography">📸 Photography</option>
+                        <option value="local-life">☕ Local Life</option>
+                        <option value="family">👨‍👩‍👧 Family</option>
+                        <option value="slow">🌙 Slow Experiences</option>
+                    </select>
+                </div>
+
+                <!-- Price Filter -->
+                <div>
+                    <label for="filter-price">Price Range</label>
+                    <select id="filter-price" name="price">
+                        <option value="">Any Price</option>
+                        <option value="free">Free / Entry Only</option>
+                        <option value="under-25">Under 25 JOD</option>
+                        <option value="25-50">25 – 50 JOD</option>
+                        <option value="above-50">50+ JOD</option>
+                    </select>
+                </div>
+
+                <!-- Duration Filter -->
+                <div>
+                    <label for="filter-duration">Duration</label>
+                    <select id="filter-duration" name="duration">
+                        <option value="">Any Duration</option>
+                        <option value="short">Short (&lt; 2 Hours)</option>
+                        <option value="half-day">Half Day (2 – 4 Hours)</option>
+                        <option value="full-day">Full Day (5+ Hours)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit">Apply Filters</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- 04. RESULTS DIRECTORY -->
+        <section id="explore-results" aria-labelledby="results-heading">
+            <h2 id="results-heading">Exploration Results</h2>
+
+            <ul>
+                <!-- Place Result: Petra -->
+                <li>
+                    <article>
+                        <figure>
+                            <img src="../assets/images/petra-preview.jpg" alt="The Treasury facade carved into sandstone canyon in Petra">
+                            <figcaption>Historic Destination &bull; Ma'an</figcaption>
+                        </figure>
+                        <header>
+                            <p><small>📍 Place</small></p>
+                            <h3>Petra (Al-Batra)</h3>
+                        </header>
+                        <p>Ancient Nabataean capital carved directly into sandstone cliffs, featuring the iconic Siq, Treasury, and Monastery.</p>
+                        <a href="place-details.html?id=petra">Discover Petra (Flyover Available)</a>
+                    </article>
+                </li>
+
+                <!-- Experience Result: Traditional Cooking -->
+                <li>
+                    <article>
+                        <figure>
+                            <img src="../assets/images/mansaf-cooking.jpg" alt="Traditional homemade Levantine dishes on stone table">
+                            <figcaption>🍴 Food &bull; Amman</figcaption>
+                        </figure>
+                        <header>
+                            <p><small>✨ Experience</small></p>
+                            <h3>Traditional Jordanian Cooking Session</h3>
+                        </header>
+                        <p>Hosted by: <a href="host-profile.html?id=beit-sitti">Beit Sitti (Maria Haddad)</a></p>
+                        <p>Duration: 3.5 Hours &bull; Price: 35 JOD per guest</p>
+                        <a href="experience-details.html?id=traditional-cooking">View Experience Details</a>
+                    </article>
+                </li>
+
+                <!-- Experience Result: Stargazing -->
+                <li>
+                    <article>
+                        <figure>
+                            <img src="../assets/images/stargazing-wadi-rum.jpg" alt="Milky Way and clear night sky over sandstone towers in Wadi Rum">
+                            <figcaption>🌙 Slow Experiences &bull; Wadi Rum</figcaption>
+                        </figure>
+                        <header>
+                            <p><small>✨ Experience</small></p>
+                            <h3>Bedouin Stargazing &amp; Night Navigation</h3>
+                        </header>
+                        <p>Hosted by: <a href="host-profile.html?id=ahmad">Ahmad Al-Zalabiya</a></p>
+                        <p>Duration: 3 Hours &bull; Price: 25 JOD per guest</p>
+                        <a href="experience-details.html?id=stargazing-rum">View Experience Details</a>
+                    </article>
+                </li>
+
+                <!-- Place Result: Wadi Rum -->
+                <li>
+                    <article>
+                        <figure>
+                            <img src="../assets/images/wadi-rum-preview.jpg" alt="Expansive desert plains and red rock mountains in Wadi Rum">
+                            <figcaption>Natural Landscape &bull; Aqaba</figcaption>
+                        </figure>
+                        <header>
+                            <p><small>📍 Place</small></p>
+                            <h3>Wadi Rum Protected Area</h3>
+                        </header>
+                        <p>Vast desert wilderness of sandstone mountains, natural canyons, and Bedouin living hospitality.</p>
+                        <a href="place-details.html?id=wadi-rum">Discover Wadi Rum</a>
+                    </article>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- 05. FOOTER -->
+    <footer>
+        <div>
+            <h3>MAKAN | مكان</h3>
+            <p>Discover places. Meet people. Live the story.</p>
+            <p><small>Modern editorial and immersive place exploration platform.</small></p>
+        </div>
+
+        <nav aria-label="Footer Quick Links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="explore.html">Explore Platform</a></li>
+                <li><a href="hosts.html">Meet Hosts</a></li>
+                <li><a href="about.html">Our Philosophy</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+
+        <nav aria-label="Legal and Accessibility">
+            <h4>Platform Details</h4>
+            <ul>
+                <li><a href="accessibility.html">Accessibility Statement</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+        </nav>
+
+        <hr>
+        <p><small>&copy; 2026 Makan Platform. Built as part of the Full-Stack Engineering Journey.</small></p>
+    </footer>
+</body>
+</html>
