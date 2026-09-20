@@ -1,0 +1,268 @@
+/* ==========================================================================
+   01. BUTTONS & CALLS TO ACTION
+   Editorial style: Solid terracotta & elegant outlines
+   ========================================================================== */
+button,
+.btn,
+main section a[href*="explore"],
+main section a[href*="details"],
+main section a[href*="profile"] {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition-default);
+}
+
+/* Primary Button (Terracotta Accent) */
+button[type="submit"],
+#hero a[href*="explore"],
+#cta a[href*="explore"] {
+  background-color: var(--color-terracotta);
+  color: #FFFFFF;
+}
+
+button[type="submit"]:hover,
+#hero a[href*="explore"]:hover,
+#cta a[href*="explore"]:hover {
+  background-color: #A25439;
+}
+
+/* Secondary Button / Outline Link */
+#hero a[href*="flyover"],
+#cta a[href*="register"] {
+  background-color: transparent;
+  border-color: var(--color-deep-brown);
+  color: var(--color-deep-brown);
+  margin-left: var(--space-xs);
+}
+
+#hero a[href*="flyover"]:hover,
+#cta a[href*="register"]:hover {
+  background-color: var(--color-deep-brown);
+  color: var(--color-cream);
+}
+
+/* Inline Card Links */
+article a {
+  font-weight: 600;
+  color: var(--color-terracotta);
+  display: inline-block;
+  margin-top: var(--space-xs);
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   02. CATEGORIES GRID
+   Based on Page 05 (Main Categories)
+   ========================================================================== */
+#categories ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-sm);
+}
+
+#categories article {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-sm);
+  text-align: center;
+  transition: transform var(--transition-default), box-shadow var(--transition-default);
+}
+
+#categories article:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--color-terracotta);
+}
+
+#categories h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+#categories p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   03. DESTINATIONS & EXPERIENCES CARDS
+   Based on Pages 13, 14 & 15 (Place, Experience, Host Cards)
+   ========================================================================== */
+#featured-places ul,
+#places-grid ul,
+#experiences ul,
+#all-experiences ul,
+#hosts-directory ul,
+#explore-results ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-md);
+}
+
+article {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm);
+  gap: 0.4rem;
+  transition: box-shadow var(--transition-default);
+}
+
+article:hover {
+  box-shadow: var(--shadow-soft);
+}
+
+article figure {
+  margin: calc(var(--space-sm) * -1) calc(var(--space-sm) * -1) var(--space-xs) calc(var(--space-sm) * -1);
+}
+
+article img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: var(--color-limestone);
+}
+
+article figcaption {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 0.3rem var(--space-sm) 0;
+}
+
+/* Metadata Description List inside Experience Cards */
+dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+  margin: var(--space-xs) 0;
+  border-top: 1px dashed var(--border-color);
+  padding-top: var(--space-xs);
+}
+
+dt {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+dd {
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   04. SIGNATURE FEATURE: MAKAN FLYOVER UI
+   Based on Page 06 (Signature Feature: Makan Flyover)
+   ========================================================================== */
+#flyover-preview,
+#place-flyover {
+  background-color: var(--color-limestone);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+}
+
+#flyover-preview article,
+#place-flyover article {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+video {
+  border-radius: var(--radius-md);
+  background-color: #000000;
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
+}
+
+aside[aria-label*="Points of Interest"] {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-top: var(--space-sm);
+  border-left: 4px solid var(--color-terracotta);
+}
+
+aside[aria-label*="Points of Interest"] ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: var(--space-xs);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   05. SEARCH & FILTER PANEL
+   Based on Page 16 (Search & Filters)
+   ========================================================================== */
+#explore-controls form {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+}
+
+label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--color-terracotta);
+  background-color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+  #explore-controls form {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    align-items: end;
+  }
+
+  #explore-controls form > div:last-child {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-xs);
+  }
+}

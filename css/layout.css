@@ -1,0 +1,178 @@
+/* ==========================================================================
+   01. PAGE WRAPPER & CONTAINER
+   ========================================================================== */
+.container,
+header,
+main > section,
+footer > div,
+footer > nav {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-sm);
+  padding-right: var(--space-sm);
+}
+
+/* ==========================================================================
+   02. MAIN NAVIGATION (HEADER)
+   Based on Page 10 (Main Navigation)
+   ========================================================================== */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-main);
+}
+
+/* Brand Logo */
+header > a[aria-label="Makan Home"] {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+/* Primary Navigation Links */
+header nav[aria-label="Primary Navigation"] ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+}
+
+header nav[aria-label="Primary Navigation"] a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 0.25rem 0.5rem;
+}
+
+header nav[aria-label="Primary Navigation"] a:hover {
+  color: var(--accent-color);
+}
+
+/* Action Links (Favorites & Sign In) */
+header > div {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+header > div a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+}
+
+header > div a[href*="login.html"] {
+  background-color: var(--color-deep-brown);
+  color: var(--color-cream);
+}
+
+header > div a[href*="login.html"]:hover {
+  background-color: var(--color-terracotta);
+}
+
+/* ==========================================================================
+   03. MAIN SECTIONS RHYTHM
+   Vertical Rhythm & Content Spacing
+   ========================================================================== */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+}
+
+main > section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+/* ==========================================================================
+   04. GLOBAL FOOTER
+   Based on Page 12 (Home Page Structure - Footer)
+   ========================================================================== */
+footer {
+  border-top: 1px solid var(--border-color);
+  background-color: var(--color-limestone);
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+footer h3,
+footer h4 {
+  margin-bottom: var(--space-xs);
+}
+
+footer nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+footer nav a {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+footer nav a:hover {
+  color: var(--text-primary);
+  text-decoration: underline;
+}
+
+footer hr {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+}
+
+footer > p {
+  text-align: center;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   05. RESPONSIVE BREAKPOINTS (Tablet & Desktop)
+   Mobile-first: Expanding layouts on larger screens
+   ========================================================================== */
+@media (min-width: 768px) {
+  /* Navbar switches to a single clean row */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: var(--space-md);
+    padding-bottom: var(--space-md);
+  }
+
+  header nav[aria-label="Primary Navigation"] ul {
+    gap: var(--space-md);
+  }
+
+  /* Footer expands into organized columns */
+  footer {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: start;
+    max-width: var(--max-width);
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+  }
+
+  footer hr,
+  footer > p {
+    grid-column: 1 / -1;
+  }
+}

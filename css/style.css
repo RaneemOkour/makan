@@ -1,0 +1,14 @@
+/* ==========================================================================
+   MAKAN — MAIN STYLESHEET
+   Theme: Modern Jordanian Editorial
+   Architecture: Modular CSS imports
+   ========================================================================== */
+
+/* 01. Foundation: Fonts, Palette & Reset */
+@import url('variables.css');
+
+/* 02. Layout: Containers, Header/Nav, Main & Footer */
+@import url('layout.css');
+
+/* 03. Components: Cards, Buttons, Makan Flyover & Forms */
+@import url('components.css');
