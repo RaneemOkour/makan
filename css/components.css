@@ -1,268 +1,485 @@
-/* ==========================================================================
-   01. BUTTONS & CALLS TO ACTION
-   Editorial style: Solid terracotta & elegant outlines
-   ========================================================================== */
-button,
-.btn,
-main section a[href*="explore"],
-main section a[href*="details"],
-main section a[href*="profile"] {
-  display: inline-block;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  font-weight: 500;
-  padding: 0.65rem 1.25rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid transparent;
-  cursor: pointer;
-  text-align: center;
-  transition: all var(--transition-default);
+/* ============================================================
+   MAKAN — COMPONENTS
+   ============================================================ */
+
+
+/* ============================================================
+   GLOBAL RESET
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
 }
 
-/* Primary Button (Terracotta Accent) */
-button[type="submit"],
-#hero a[href*="explore"],
-#cta a[href*="explore"] {
-  background-color: var(--color-terracotta);
-  color: #FFFFFF;
+html {
+    scroll-behavior: smooth;
 }
 
-button[type="submit"]:hover,
-#hero a[href*="explore"]:hover,
-#cta a[href*="explore"]:hover {
-  background-color: #A25439;
+body {
+    margin: 0;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
 }
 
-/* Secondary Button / Outline Link */
-#hero a[href*="flyover"],
-#cta a[href*="register"] {
-  background-color: transparent;
-  border-color: var(--color-deep-brown);
-  color: var(--color-deep-brown);
-  margin-left: var(--space-xs);
+img,
+video {
+    max-width: 100%;
+    display: block;
 }
 
-#hero a[href*="flyover"]:hover,
-#cta a[href*="register"]:hover {
-  background-color: var(--color-deep-brown);
-  color: var(--color-cream);
+img {
+    object-fit: cover;
 }
 
-/* Inline Card Links */
-article a {
-  font-weight: 600;
-  color: var(--color-terracotta);
-  display: inline-block;
-  margin-top: var(--space-xs);
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-article a:hover {
-  text-decoration: underline;
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-/* ==========================================================================
-   02. CATEGORIES GRID
-   Based on Page 05 (Main Categories)
-   ========================================================================== */
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    line-height: 1.1;
+}
+
+p {
+    margin-top: 0;
+}
+
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+}
+
+.brand-logo img {
+    width: auto;
+    height: 42px;
+    display: block;
+}
+
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+main a[href*="explore"],
+main a[href*="flyover"],
+main a[href*="register"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.85rem 1.4rem;
+
+    background: var(--color-terracotta);
+    color: var(--color-cream);
+
+    border-radius: var(--radius-sm);
+
+    font-weight: 600;
+
+    transition:
+        background var(--transition-fast),
+        transform var(--transition-fast);
+}
+
+main a[href*="explore"]:hover,
+main a[href*="flyover"]:hover,
+main a[href*="register"]:hover {
+    background: var(--color-deep-brown);
+    transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   HERO
+   ============================================================ */
+
+#hero {
+    position: relative;
+
+    min-height: 78vh;
+
+    max-width: none;
+
+    margin: 0;
+
+    padding: 8rem max(2rem, calc((100vw - var(--content-width)) / 2));
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(43, 33, 27, 0.78),
+            rgba(43, 33, 27, 0.30),
+            rgba(43, 33, 27, 0.05)
+        ),
+        url("../assets/images/hero-logo.png") center / cover no-repeat;
+
+    color: var(--color-cream);
+}
+
+#hero h1 {
+    max-width: 850px;
+
+    margin-bottom: 1.5rem;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+
+    color: var(--color-cream);
+}
+
+#hero p {
+    max-width: 680px;
+}
+
+#hero p strong {
+    font-size: 1.2rem;
+}
+
+#hero > div {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    margin-top: 1.5rem;
+}
+
+
+/* ============================================================
+   SECTION HEADINGS
+   ============================================================ */
+
+main > section:not(#hero) h2 {
+    font-size: clamp(2.3rem, 4vw, 4rem);
+    color: var(--text-primary);
+}
+
+main > section:not(#hero) > p {
+    max-width: 650px;
+    color: var(--text-muted);
+}
+
+
+/* ============================================================
+   WHAT DO YOU FEEL LIKE?
+   ============================================================ */
+
 #categories ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-  gap: var(--space-sm);
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+
+    gap: 1rem;
+
+    margin-top: 1.5rem;
 }
 
 #categories article {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: var(--space-sm);
-  text-align: center;
-  transition: transform var(--transition-default), box-shadow var(--transition-default);
+    min-height: 220px;
+
+    padding: 1.5rem;
+
+    background: rgba(255, 255, 255, 0.45);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform var(--transition-normal),
+        background var(--transition-normal);
 }
 
 #categories article:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-soft);
-  border-color: var(--color-terracotta);
+    transform: translateY(-5px);
+
+    background: var(--color-sandstone);
 }
 
-#categories h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.25rem;
+#categories article h3 {
+    font-size: 1.5rem;
 }
 
-#categories p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+#categories article a {
+    margin-top: auto;
+
+    color: var(--color-terracotta);
+
+    font-weight: 600;
 }
 
-/* ==========================================================================
-   03. DESTINATIONS & EXPERIENCES CARDS
-   Based on Pages 13, 14 & 15 (Place, Experience, Host Cards)
-   ========================================================================== */
-#featured-places ul,
-#places-grid ul,
-#experiences ul,
-#all-experiences ul,
-#hosts-directory ul,
-#explore-results ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--space-md);
+
+/* ============================================================
+   FEATURED PLACES
+   ============================================================ */
+
+#featured-places ul {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 2rem;
 }
 
-article {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-sm);
-  gap: 0.4rem;
-  transition: box-shadow var(--transition-default);
+#featured-places article {
+    overflow: hidden;
+
+    background: var(--color-cream);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius-md);
 }
 
-article:hover {
-  box-shadow: var(--shadow-soft);
+#featured-places figure {
+    margin: 0;
 }
 
-article figure {
-  margin: calc(var(--space-sm) * -1) calc(var(--space-sm) * -1) var(--space-xs) calc(var(--space-sm) * -1);
+#featured-places figure img {
+    width: 100%;
+    height: 360px;
 }
 
-article img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  background-color: var(--color-limestone);
+#featured-places article h3,
+#featured-places article p,
+#featured-places article > a {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
-article figcaption {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  padding: 0.3rem var(--space-sm) 0;
+#featured-places article h3 {
+    margin-top: 1.5rem;
+
+    font-size: 2rem;
 }
 
-/* Metadata Description List inside Experience Cards */
-dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.2rem 0.5rem;
-  font-size: 0.85rem;
-  margin: var(--space-xs) 0;
-  border-top: 1px dashed var(--border-color);
-  padding-top: var(--space-xs);
+
+/* ============================================================
+   MAKAN FLYOVER
+   ============================================================ */
+
+#flyover-preview {
+    max-width: none;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    padding: 7rem max(2rem, calc((100vw - var(--content-width)) / 2));
+
+    background: var(--color-deep-brown);
+
+    color: var(--color-cream);
 }
 
-dt {
-  font-weight: 600;
-  color: var(--text-muted);
+#flyover-preview h2 {
+    color: var(--color-cream);
 }
 
-dd {
-  color: var(--text-primary);
+#flyover-preview > article {
+    margin-top: 2rem;
 }
 
-/* ==========================================================================
-   04. SIGNATURE FEATURE: MAKAN FLYOVER UI
-   Based on Page 06 (Signature Feature: Makan Flyover)
-   ========================================================================== */
-#flyover-preview,
-#place-flyover {
-  background-color: var(--color-limestone);
-  border-radius: var(--radius-lg);
-  padding: var(--space-md);
+#flyover-preview video {
+    width: 100%;
+    max-height: 650px;
+
+    object-fit: cover;
+
+    border-radius: var(--radius-md);
 }
 
-#flyover-preview article,
-#place-flyover article {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
+#flyover-preview aside {
+    margin-top: 2rem;
+
+    padding: 1.5rem;
+
+    border-left: 2px solid var(--color-terracotta);
 }
 
-video {
-  border-radius: var(--radius-md);
-  background-color: #000000;
-  width: 100%;
-  max-height: 480px;
-  object-fit: cover;
+#flyover-preview aside h4 {
+    color: var(--color-sandstone);
 }
 
-aside[aria-label*="Points of Interest"] {
-  background-color: var(--bg-surface);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-  margin-top: var(--space-sm);
-  border-left: 4px solid var(--color-terracotta);
+
+/* ============================================================
+   EXPERIENCES
+   ============================================================ */
+
+#experiences ul {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(320px, 1fr));
+
+    gap: 2rem;
 }
 
-aside[aria-label*="Points of Interest"] ul {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  margin-top: var(--space-xs);
-  font-size: 0.9rem;
+#experiences article {
+    background: white;
+
+    border: 1px solid var(--border-color);
+
+    overflow: hidden;
+
+    border-radius: var(--radius-md);
 }
 
-/* ==========================================================================
-   05. SEARCH & FILTER PANEL
-   Based on Page 16 (Search & Filters)
-   ========================================================================== */
-#explore-controls form {
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: var(--space-md);
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
+#experiences figure {
+    margin: 0;
 }
 
-label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-  color: var(--text-primary);
+#experiences figure img {
+    width: 100%;
+    height: 300px;
 }
 
-input[type="text"],
-input[type="search"],
-input[type="email"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
-  width: 100%;
-  padding: 0.6rem 0.8rem;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-sm);
-  background-color: var(--bg-main);
-  color: var(--text-primary);
+#experiences article > *:not(figure) {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--color-terracotta);
-  background-color: #FFFFFF;
+
+/* ============================================================
+   HOSTS
+   ============================================================ */
+
+#hosts ul {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
+
+    gap: 2rem;
 }
 
-@media (min-width: 768px) {
-  #explore-controls form {
-    grid-template-columns: 2fr 1fr 1fr 1fr;
-    align-items: end;
-  }
+#hosts article {
+    padding: 2rem;
 
-  #explore-controls form > div:last-child {
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: flex-end;
-    gap: var(--space-xs);
-  }
+    background: var(--color-sandstone);
+
+    border-radius: var(--radius-md);
+}
+
+#hosts figure {
+    margin: 0 0 1.5rem;
+}
+
+#hosts figure img {
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+}
+
+
+/* ============================================================
+   STORIES
+   ============================================================ */
+
+#stories {
+    background: var(--color-olive);
+
+    color: var(--color-cream);
+
+    max-width: none;
+
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    padding-left: max(2rem, calc((100vw - var(--content-width)) / 2));
+    padding-right: max(2rem, calc((100vw - var(--content-width)) / 2));
+}
+
+#stories h2 {
+    color: var(--color-cream);
+}
+
+#stories article {
+    max-width: 700px;
+}
+
+#stories article h3 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+
+#cta {
+    max-width: none;
+
+    padding: 7rem 2rem;
+
+    text-align: center;
+
+    background: var(--color-sandstone);
+}
+
+#cta h2 {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+}
+
+#cta > p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 767px) {
+
+    #hero {
+        min-height: 85vh;
+
+        padding: 6rem 1.5rem;
+    }
+
+    #hero h1 {
+        font-size: 3rem;
+    }
+
+    #categories ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #flyover-preview,
+    #stories,
+    #cta {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
 }
