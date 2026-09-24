@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAKAN | مكان - Discover places. Meet people. Live the story.</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/layout.css">
 </head>
 <body>
     <!-- 01. MAIN NAV -->
     <header>
         <a href="index.html" aria-label="Makan Home" class="brand-logo">
-            <img src= "assets/icons/logo.png" alt = "MAKAN | مكان">
+            <img src="assets/icons/logo.png" alt="MAKAN | مكان">
         </a>
         <nav aria-label="Primary Navigation">
             <ul>
@@ -30,13 +31,33 @@
 
     <!-- MAIN CONTENT -->
     <main>
-        <!-- 02. HERO SEC -->
-        <section id="hero" aria-labelledby="hero-heading">
-            <span class ="section-subtitle">START WITH A FEELING</span>
-            <h2 class="section-title">What do you feel like?</h2>
-            <p class="section-desc">Nature, Culture, Food, Craft-pick a mood and Makan finds the places and the people to match.</p>
+        <!-- 02. HERO SECTION (CINEMATIC DISCOVERY) -->
+        <section id="hero" class="hero-cinematic" aria-labelledby="hero-heading">
+            <img src="assets/images/hero.jpg" alt="Wadi Rum Desert at Sunset" class="hero-bg-img">
+            <div class ="hero-overlay"></div>
+            <div class="hero-content">
+                <span class="hero-badge">مكان • MAKAN — JORDAN'S EXPERIENCE-FIRST DISCOVERY</span>
+                <h1 id="hero-heading" class="hero-title">Discover places. Meet people. Live the story.</h1>
+                <p class="hero-desc">
+                    Don't start with where to go. Start with what you want to experience.<br>
+                    Makan brings you the places, the people, and the hands that make Jordan meaningful — then walks you right into them.
+                </p>
+                <div class="hero-actions">
+                    <a href="pages/experiences.html" class="btn-primary">Explore experiences</a>
+                    <a href="pages/hosts.html" class="btn-secondary-glass">Become a host</a>
+                </div>
+            </div>
+        </section>
 
-            <div class="feeling-grid">
+        <!-- 03. WHAT DO YOU FEEL LIKE? (MOOD CARDS) -->
+        <section id="feelings" class="feelings-section" aria-labelledby="feelings-heading">
+             <div class="section-header-center">
+                <span class="section-subtitle">START WITH A FEELING</span>
+                <h2 id="feelings-heading" class="section-title">What do you feel like?</h2>
+                <p class="section-desc">Nature, culture, food, craft — pick a mood and Makan finds the places and the people to match.</p>
+             </div>
+
+             <div class="feelings-grid">
                 <a href="pages/explore.html?cat=nature" class="feeling-card">
                     <img src="assets/images/nature.jpg" alt="Nature in Jordan">
                     <span class="card-label">Nature</span>
@@ -51,11 +72,9 @@
                 </a>
                 <a href="pages/explore.html?cat=craft" class="feeling-card">
                     <img src="assets/images/art craft.jpg" alt="Art and Craft">
-                    <span class="card-label">Art & Craft</span>
+                    <span class="card-label">Art &amp; Craft</span>
                 </a>
-
-            </div>
-            
+             </div>
         </section>
 
         <!-- 04. FEATURED PLACES -->
@@ -63,7 +82,7 @@
             <h2 id="featured-places-heading">Featured Places</h2>
             <p>Every destination holds communities, memories, and landscapes waiting to be unveiled.</p>    
 
-            <ul>
+            <ul class="places-grid">
                 <li>
                     <article>
                         <figure>
@@ -103,7 +122,7 @@
                 <figure>
                     <video controls poster="assets/images/flyover-poster.jpg" width="640">
                         <source src="assets/videos/petra-aerial-mock.mp4" type="video/mp4">
-                        <p>Your browser does not support HTML5 video. You can download the preview <a href="assets/videos/petra-aerial-mock.mp4">here</a>.</p>
+                        <p>Your browser does not support HTML5 video.</p>
                     </video>
                     <figcaption>Interactive visual prototype for aerial exploration.</figcaption>
                 </figure>
@@ -135,7 +154,6 @@
                         <p>Hosted by: <a href="pages/host-profile.html?id=um-ahmad">Um Ahmad</a></p>
                         <p>Location: As-Salt, Jordan</p>
 
-                        <!-- METADATA using Description List -->
                         <dl>
                             <dt>Duration:</dt>
                             <dd>3.5 Hours</dd>

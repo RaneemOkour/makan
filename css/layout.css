@@ -15,7 +15,7 @@ footer > nav {
 }
 
 /* ==========================================================================
-   02.MAIN NAV
+   02. MAIN NAV
    ========================================================================== */
 header {
   display: flex;
@@ -38,7 +38,8 @@ header > a[aria-label="Makan Home"] {
 
 .brand-logo img,
 header > a[aria-label="Makan Home"] img {
-  height: 48px;        
+  height: 48px;
+  width: auto;
   display: block;
   object-fit: contain;
 }
@@ -93,18 +94,29 @@ header > div a[href*="login.html"]:hover {
 }
 
 /* ==========================================================================
-   02.1 HERO SECTION 
+   02.1 HERO SECTION (PERFECTLY CENTERED EDITORIAL)
    ========================================================================== */
 .hero-cinematic {
   position: relative;
   width: 100%;
-  min-height: 85vh;
+  min-height: 92vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center;      /* توسيط عمودي في منتصف الشاشة */
+  justify-content: center;  /* توسيط أفقي */
   text-align: center;
-  background: url('../assets/images/hero.jpg') center/cover no-repeat;
+  overflow: hidden;
   margin-bottom: var(--space-xl, 3rem);
+}
+
+.hero-cinematic .hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
 }
 
 .hero-cinematic::before {
@@ -113,62 +125,72 @@ header > div a[href*="login.html"]:hover {
   inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(35, 25, 20, 0.45) 0%,
-    rgba(35, 25, 20, 0.7) 100%
+    rgba(30, 20, 15, 0.45) 0%,
+    rgba(30, 20, 15, 0.68) 100%
   );
-  z-index: 1;
+  z-index: 2;
 }
 
+/* الحاوية: تم توسيعها لتتسع للعنوان التحريري براحة */
 .hero-content {
   position: relative;
-  z-index: 2;
-  max-width: 820px;
-  padding: 2rem 1.5rem;
+  z-index: 3;
+  width: 100%;
+  max-width: 980px;         /* يعطي مساحة كافية للعنوان ليمتد مثل التصميم */
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
   color: var(--color-cream, #FAF7F1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* يضمن توسيط كل عنصر بداخله بدقة */
 }
 
 .hero-badge {
-  display: inline-block;
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: rgba(250, 247, 241, 0.85);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
+/* العنوان التحريري الأنيق على سطرين متوازنين */
 .hero-title {
   font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
   font-weight: 400;
   line-height: 1.15;
   color: #FFFFFF;
-  margin-bottom: 1.25rem;
-  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+  max-width: 850px;         /* يتحكم بعدد الكلمات في كل سطر */
+  letter-spacing: 0.3px;
 }
 
 .hero-desc {
   font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.65;
   color: rgba(250, 247, 241, 0.9);
-  margin-bottom: 2rem;
+  max-width: 700px;
+  margin-bottom: 2.2rem;
   font-weight: 300;
 }
 
 .hero-actions {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .btn-primary {
   background-color: var(--color-cream, #FAF7F1);
   color: var(--color-deep-brown, #352A24);
-  padding: 0.75rem 1.75rem;
+  padding: 0.85rem 1.85rem;
   font-weight: 500;
+  font-size: 0.95rem;
   border-radius: var(--radius-sm, 4px);
   text-decoration: none;
   transition: all 0.25s ease;
@@ -185,8 +207,9 @@ header > div a[href*="login.html"]:hover {
   -webkit-backdrop-filter: blur(8px);
   color: #FAF7F1;
   border: 1px solid rgba(250, 247, 241, 0.35);
-  padding: 0.75rem 1.75rem;
+  padding: 0.85rem 1.85rem;
   font-weight: 500;
+  font-size: 0.95rem;
   border-radius: var(--radius-sm, 4px);
   text-decoration: none;
   transition: all 0.25s ease;
@@ -196,7 +219,6 @@ header > div a[href*="login.html"]:hover {
   background: rgba(255, 255, 255, 0.25);
   border-color: #FAF7F1;
 }
-
 /* ==========================================================================
    03. MAIN SECTIONS 
    ========================================================================== */
@@ -204,7 +226,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: var(--space-xl, 3rem);
-  padding-top: var(--space-lg, 2rem);
+  padding-top: 0;
   padding-bottom: var(--space-xl, 3rem);
 }
 
@@ -215,59 +237,135 @@ main > section {
 }
 
 /* ==========================================================================
-   04. FEELINGS / MOOD SECTION (EDITORIAL GRID)
+   04. FEELINGS / MOOD SECTION (CLEAN 4-COLUMN EDITORIAL)
    ========================================================================== */
-.feelings-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.25rem;
-  margin-top: 1rem;
-}
-
-.feeling-card {
-  position: relative;
-  height: 320px;
-  border-radius: 8px;
-  overflow: hidden;
-  text-decoration: none;
-  display: block;
-}
-
-.feeling-card img {
+.feelings-section {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+  padding: 0 1rem;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+}
+
+.section-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #556B4F; /* Olive */
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2.2rem, 3.8vw, 3rem);
+  font-weight: 400;
+  color: #352A24; /* Deep Brown */
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.section-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #6B5E55;
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* فرض التوزيع الأفقي إلى 4 أعمدة متساوية على الشاشات الكبيرة */
+.feelings-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+  width: 100% !important;
+}
+
+/* بطاقة الصورة المستطيلة */
+.feeling-card {
+  position: relative !important;
+  height: 440px !important;
+  border-radius: 6px !important;
+  overflow: hidden !important;
+  display: block !important;
+  text-decoration: none !important;
+  background: none !important;      /* إلغاء أي خلفية برتقالية قديمة */
+  background-color: transparent !important;
+  padding: 0 !important;           /* إلغاء أي مسافة تدفع الصورة */
+  border: none !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* الصورة تملأ الصندوق بالكامل من الحافة للحافة */
+.feeling-card img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  display: block !important;
+  transition: transform 0.45s ease;
 }
 
 .feeling-card:hover img {
   transform: scale(1.04);
 }
 
-.feeling-card .card-label {
-  position: absolute;
-  bottom: 1.25rem;
-  left: 0;
-  right: 0;
-  text-align: center;
-  color: #FAF7F1;
-  font-family: var(--font-body, 'Inter', sans-serif);
-  font-size: 1rem;
-  font-weight: 500;
-  z-index: 2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
-}
-
+/* طبقة تظليل مدمجة في أسفل الكرت لإبراز النص الأبيض */
 .feeling-card::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(
+    to top,
+    rgba(20, 15, 12, 0.8) 0%,
+    rgba(20, 15, 12, 0.2) 35%,
+    transparent 65%
+  ) !important;
+  pointer-events: none;
+  z-index: 2;
 }
 
+/* عنوان الكرت في المنتصف بالأسفل */
+.feeling-card .card-label {
+  position: absolute !important;
+  bottom: 1.4rem !important;
+  left: 0 !important;
+  right: 0 !important;
+  text-align: center !important;
+  color: #FAF7F1 !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  z-index: 3 !important;
+  display: block !important;
+}
+
+/* التجاوب مع شاشات الهواتف والتابلت */
+@media (max-width: 900px) {
+  .feelings-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .feelings-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .feeling-card {
+    height: 340px !important;
+  }
+}
 /* ==========================================================================
    05. GLOBAL FOOTER
    Based on Page 12 (Home Page Structure - Footer)
@@ -323,7 +421,6 @@ footer > p {
    Mobile-first: Expanding layouts on larger screens
    ========================================================================== */
 @media (min-width: 768px) {
-  /* Navbar switches to a single clean row aligned in center */
   header {
     flex-direction: row;
     justify-content: space-between;
@@ -336,7 +433,6 @@ footer > p {
     gap: var(--space-md, 1.25rem);
   }
 
-  /* Footer expands into organized columns */
   footer {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
