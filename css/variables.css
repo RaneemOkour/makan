@@ -1,105 +1,94 @@
 /* ============================================================
-   MAKAN — DESIGN TOKENS
-   Modern Jordanian Editorial
+   MAKAN — DESIGN TOKENS (variables.css)
+   Theme: Modern Jordanian Editorial
+   Reference: Makan Project Bible (Page 07 & 08)
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
+    /* --------------------------------------------------------
+       01. BRAND COLOR PALETTE (EXACT BIBLE TOKENS)
+       -------------------------------------------------------- */
+    --color-limestone:   #E8E0D2;
+    --color-cream:       #FAF7F1;
+    --color-deep-brown:  #352A24;
+    --color-olive:       #556B4F;
+    --color-terracotta:  #B9684B;
+    --color-muted-blue:  #8EA8A8;
+
+    /* Secondary Heritage Accents (Optional Accents) */
+    --color-gold:        #D39B3D;
+    --color-white:       #FFFFFF;
 
     /* --------------------------------------------------------
-       COLORS
+       02. FUNCTIONAL ROLES & BACKGROUNDS
        -------------------------------------------------------- */
-
-    --color-cream: #FFF8ED;
-    --color-deep-brown: #2B211B;
-    --color-sandstone: #E9C79C;
-
-    --color-olive: #4E6B3C;
-    --color-terracotta: #C65D3A;
-    --color-heritage-red: #A63D40;
-    --color-jordan-blue: #3E7180;
-    --color-turquoise: #2A8C87;
-    --color-gold: #D39B3D;
-
+    --bg-main:           var(--color-cream);
+    --bg-surface:        var(--color-limestone);
+    --bg-dark:           var(--color-deep-brown);
+    --bg-olive:          var(--color-olive);
 
     /* --------------------------------------------------------
-       BACKGROUNDS
+       03. TYPOGRAPHY ROLES
        -------------------------------------------------------- */
-
-    --bg-main: var(--color-cream);
-    --bg-dark: var(--color-deep-brown);
-    --bg-sandstone: var(--color-sandstone);
-    --bg-olive: var(--color-olive);
-
+    --text-primary:      var(--color-deep-brown);
+    --text-secondary:    #5C4E45;
+    --text-muted:        #6B5E55;
+    --text-light:        var(--color-cream);
 
     /* --------------------------------------------------------
-       TEXT
+       04. ACCENTS
        -------------------------------------------------------- */
-
-    --text-primary: var(--color-deep-brown);
-    --text-secondary: #5C4E45;
-    --text-muted: #796B61;
-    --text-light: var(--color-cream);
-
+    --accent-color:      var(--color-terracotta);
+    --accent-secondary:  var(--color-olive);
+    --accent-blue:       var(--color-muted-blue);
+    --accent-gold:       var(--color-gold);
 
     /* --------------------------------------------------------
-       ACCENTS
+       05. BORDERS & SHADOWS
        -------------------------------------------------------- */
-
-    --accent-color: var(--color-terracotta);
-    --accent-secondary: var(--color-olive);
-    --accent-blue: var(--color-jordan-blue);
-    --accent-gold: var(--color-gold);
-
+    --border-color:      var(--color-limestone);
+    --border-subtle:     rgba(53, 42, 36, 0.12);
+    --border-light:      rgba(250, 247, 241, 0.25);
+    --shadow-sm:         0 2px 8px rgba(53, 42, 36, 0.04);
+    --shadow-md:         0 4px 15px rgba(53, 42, 36, 0.08);
+    --shadow-lg:         0 10px 25px rgba(53, 42, 36, 0.12);
 
     /* --------------------------------------------------------
-       BORDERS
+       06. TYPOGRAPHY FAMILIES
        -------------------------------------------------------- */
-
-    --border-color: rgba(43, 33, 27, 0.14);
-    --border-light: rgba(255, 248, 237, 0.25);
-
+    --font-heading:      'Cormorant Garamond', Georgia, serif;
+    --font-body:         'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 
     /* --------------------------------------------------------
-       TYPOGRAPHY
+       07. LAYOUT & CONTAINERS
        -------------------------------------------------------- */
-
-    --font-heading: "Cormorant Garamond", Georgia, serif;
-    --font-body: "Inter", Arial, sans-serif;
-
+    --max-width:         1200px;
+    --content-width:     1120px;
 
     /* --------------------------------------------------------
-       LAYOUT
+       08. SPACING SCALE
        -------------------------------------------------------- */
-
-    --max-width: 1200px;
-    --content-width: 1120px;
-
+    --space-xs:          0.5rem;   /* 8px */
+    --space-sm:          1rem;     /* 16px */
+    --space-md:          1.5rem;   /* 24px */
+    --space-lg:          3rem;     /* 48px */
+    --space-xl:          5rem;     /* 80px */
+    --space-2xl:         8rem;     /* 128px */
 
     /* --------------------------------------------------------
-       SPACING
+       09. BORDER RADIUS
        -------------------------------------------------------- */
-
-    --space-xs: 0.5rem;
-    --space-sm: 1rem;
-    --space-md: 1.5rem;
-    --space-lg: 3rem;
-    --space-xl: 6rem;
-    --space-2xl: 9rem;
-
+    --radius-sm:         4px;
+    --radius-md:         8px;
+    --radius-lg:         16px;
+    --radius-full:       9999px;
 
     /* --------------------------------------------------------
-       RADIUS
+       10. TRANSITIONS & TIMING
        -------------------------------------------------------- */
-
-    --radius-sm: 4px;
-    --radius-md: 10px;
-    --radius-lg: 18px;
-
-
-    /* --------------------------------------------------------
-       TRANSITIONS
-       -------------------------------------------------------- */
-
-    --transition-fast: 180ms ease;
+    --transition-fast:   180ms ease;
     --transition-normal: 300ms ease;
+    --transition-smooth: 450ms cubic-bezier(0.16, 1, 0.3, 1);
 }

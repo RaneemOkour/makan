@@ -1,12 +1,10 @@
 /* ============================================================
-   MAKAN — COMPONENTS
+   MAKAN — COMPONENTS & DESIGN SYSTEM
    ============================================================ */
-
 
 /* ============================================================
-   GLOBAL RESET
+   GLOBAL RESET & TYPOGRAPHY
    ============================================================ */
-
 * {
     box-sizing: border-box;
 }
@@ -17,9 +15,9 @@ html {
 
 body {
     margin: 0;
-    background: var(--bg-main);
-    color: var(--text-primary);
-    font-family: var(--font-body);
+    background: var(--bg-main, #FAF7F1);
+    color: var(--text-primary, #352A24);
+    font-family: var(--font-body, 'Inter', sans-serif);
     line-height: 1.6;
 }
 
@@ -27,10 +25,6 @@ img,
 video {
     max-width: 100%;
     display: block;
-}
-
-img {
-    object-fit: cover;
 }
 
 a {
@@ -44,442 +38,279 @@ ul {
     list-style: none;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
     margin-top: 0;
-    font-family: var(--font-heading);
+    font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
     font-weight: 500;
-    line-height: 1.1;
+    line-height: 1.15;
 }
 
 p {
     margin-top: 0;
 }
 
-
 /* ============================================================
-   LOGO
+   MAKAN FLYOVER COMPONENT
    ============================================================ */
-
-.brand-logo {
-    display: inline-flex;
-    align-items: center;
-}
-
-.brand-logo img {
-    width: auto;
-    height: 42px;
-    display: block;
-}
-
-
-/* ============================================================
-   BUTTONS
-   ============================================================ */
-
-main a[href*="explore"],
-main a[href*="flyover"],
-main a[href*="register"] {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 0.85rem 1.4rem;
-
-    background: var(--color-terracotta);
-    color: var(--color-cream);
-
-    border-radius: var(--radius-sm);
-
-    font-weight: 600;
-
-    transition:
-        background var(--transition-fast),
-        transform var(--transition-fast);
-}
-
-main a[href*="explore"]:hover,
-main a[href*="flyover"]:hover,
-main a[href*="register"]:hover {
-    background: var(--color-deep-brown);
-    transform: translateY(-2px);
-}
-
-
-/* ============================================================
-   HERO
-   ============================================================ */
-
-#hero {
-    position: relative;
-
-    min-height: 78vh;
-
-    max-width: none;
-
-    margin: 0;
-
-    padding: 8rem max(2rem, calc((100vw - var(--content-width)) / 2));
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    overflow: hidden;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(43, 33, 27, 0.78),
-            rgba(43, 33, 27, 0.30),
-            rgba(43, 33, 27, 0.05)
-        ),
-        url("../assets/images/hero-logo.png") center / cover no-repeat;
-
-    color: var(--color-cream);
-}
-
-#hero h1 {
-    max-width: 850px;
-
-    margin-bottom: 1.5rem;
-
-    font-size: clamp(3rem, 6vw, 6rem);
-
-    color: var(--color-cream);
-}
-
-#hero p {
-    max-width: 680px;
-}
-
-#hero p strong {
-    font-size: 1.2rem;
-}
-
-#hero > div {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-
-    margin-top: 1.5rem;
-}
-
-
-/* ============================================================
-   SECTION HEADINGS
-   ============================================================ */
-
-main > section:not(#hero) h2 {
-    font-size: clamp(2.3rem, 4vw, 4rem);
-    color: var(--text-primary);
-}
-
-main > section:not(#hero) > p {
-    max-width: 650px;
-    color: var(--text-muted);
-}
-
-
-/* ============================================================
-   WHAT DO YOU FEEL LIKE?
-   ============================================================ */
-
-#categories ul {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(180px, 1fr));
-
-    gap: 1rem;
-
-    margin-top: 1.5rem;
-}
-
-#categories article {
-    min-height: 220px;
-
-    padding: 1.5rem;
-
-    background: rgba(255, 255, 255, 0.45);
-
-    border: 1px solid var(--border-color);
-
-    border-radius: var(--radius-md);
-
-    display: flex;
-    flex-direction: column;
-
-    transition:
-        transform var(--transition-normal),
-        background var(--transition-normal);
-}
-
-#categories article:hover {
-    transform: translateY(-5px);
-
-    background: var(--color-sandstone);
-}
-
-#categories article h3 {
-    font-size: 1.5rem;
-}
-
-#categories article a {
-    margin-top: auto;
-
-    color: var(--color-terracotta);
-
-    font-weight: 600;
-}
-
-
-/* ============================================================
-   FEATURED PLACES
-   ============================================================ */
-
-#featured-places ul {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(320px, 1fr));
-
-    gap: 2rem;
-}
-
-#featured-places article {
-    overflow: hidden;
-
-    background: var(--color-cream);
-
-    border: 1px solid var(--border-color);
-
-    border-radius: var(--radius-md);
-}
-
-#featured-places figure {
-    margin: 0;
-}
-
-#featured-places figure img {
-    width: 100%;
-    height: 360px;
-}
-
-#featured-places article h3,
-#featured-places article p,
-#featured-places article > a {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-}
-
-#featured-places article h3 {
-    margin-top: 1.5rem;
-
-    font-size: 2rem;
-}
-
-
-/* ============================================================
-   MAKAN FLYOVER
-   ============================================================ */
-
 #flyover-preview {
     max-width: none;
-
     margin-left: 0;
     margin-right: 0;
-
-    padding: 7rem max(2rem, calc((100vw - var(--content-width)) / 2));
-
-    background: var(--color-deep-brown);
-
-    color: var(--color-cream);
+    padding: 5rem max(1.5rem, calc((100vw - 1200px) / 2));
+    background: var(--color-deep-brown, #352A24);
+    color: var(--color-cream, #FAF7F1);
 }
 
 #flyover-preview h2 {
-    color: var(--color-cream);
+    font-size: clamp(2.2rem, 4vw, 3.2rem);
+    color: var(--color-cream, #FAF7F1);
+    margin-bottom: 0.5rem;
+}
+
+#flyover-preview > p {
+    color: rgba(250, 247, 241, 0.85);
+    max-width: 680px;
 }
 
 #flyover-preview > article {
-    margin-top: 2rem;
+    margin-top: 2.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(250, 247, 241, 0.12);
+    border-radius: var(--radius-md, 8px);
+    padding: 2rem;
+}
+
+#flyover-preview article header h3 {
+    font-size: 1.8rem;
+    color: var(--color-cream, #FAF7F1);
+    margin-bottom: 0.25rem;
+}
+
+#flyover-preview article header p small {
+    color: var(--color-terracotta, #B9684B);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 #flyover-preview video {
     width: 100%;
-    max-height: 650px;
-
+    max-height: 520px;
     object-fit: cover;
+    border-radius: var(--radius-sm, 4px);
+    margin: 1.5rem 0;
+}
 
-    border-radius: var(--radius-md);
+#flyover-preview figcaption {
+    font-size: 0.85rem;
+    color: rgba(250, 247, 241, 0.6);
+    text-align: center;
 }
 
 #flyover-preview aside {
     margin-top: 2rem;
-
-    padding: 1.5rem;
-
-    border-left: 2px solid var(--color-terracotta);
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--color-terracotta, #B9684B);
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 0 4px 4px 0;
 }
 
 #flyover-preview aside h4 {
-    color: var(--color-sandstone);
+    color: var(--color-cream, #FAF7F1);
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
 }
 
+#flyover-preview aside ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#flyover-preview aside li {
+    font-size: 0.95rem;
+    color: rgba(250, 247, 241, 0.85);
+}
+
+#flyover-preview aside strong {
+    color: #FFFFFF;
+}
 
 /* ============================================================
-   EXPERIENCES
+   MEET THE HOSTS COMPONENT
    ============================================================ */
-
-#experiences ul {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(320px, 1fr));
-
-    gap: 2rem;
-}
-
-#experiences article {
-    background: white;
-
-    border: 1px solid var(--border-color);
-
-    overflow: hidden;
-
-    border-radius: var(--radius-md);
-}
-
-#experiences figure {
-    margin: 0;
-}
-
-#experiences figure img {
+#hosts {
     width: 100%;
-    height: 300px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-#experiences article > *:not(figure) {
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+#hosts h2 {
+    font-size: clamp(2.2rem, 3.8vw, 3rem);
+    color: var(--color-deep-brown, #352A24);
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
-
-/* ============================================================
-   HOSTS
-   ============================================================ */
+#hosts > p {
+    text-align: center;
+    color: var(--text-muted, #6B5E55);
+    margin-bottom: 2.5rem;
+}
 
 #hosts ul {
     display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(300px, 1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 #hosts article {
-    padding: 2rem;
-
-    background: var(--color-sandstone);
-
-    border-radius: var(--radius-md);
+    padding: 2.5rem 2rem;
+    background: #E8E0D2; /* Limestone */
+    border-radius: var(--radius-md, 8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 #hosts figure {
-    margin: 0 0 1.5rem;
+    margin: 0 0 1.25rem;
 }
 
 #hosts figure img {
-    width: 150px;
-    height: 150px;
-
+    width: 130px;
+    height: 130px;
     border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #FAF7F1;
 }
 
+#hosts h3 {
+    font-size: 1.6rem;
+    color: var(--color-deep-brown, #352A24);
+    margin-bottom: 0.35rem;
+}
+
+#hosts p strong {
+    color: var(--color-terracotta, #B9684B);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#hosts p {
+    font-size: 0.95rem;
+    color: var(--text-muted, #6B5E55);
+    margin-bottom: 0.5rem;
+}
+
+#hosts article > a {
+    margin-top: 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-deep-brown, #352A24);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
 
 /* ============================================================
-   STORIES
+   STORIES OF MAKAN
    ============================================================ */
-
 #stories {
-    background: var(--color-olive);
-
-    color: var(--color-cream);
-
+    background: var(--color-olive, #556B4F);
+    color: var(--color-cream, #FAF7F1);
     max-width: none;
-
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-
-    padding-left: max(2rem, calc((100vw - var(--content-width)) / 2));
-    padding-right: max(2rem, calc((100vw - var(--content-width)) / 2));
+    margin-left: 0;
+    margin-right: 0;
+    padding: 5rem max(1.5rem, calc((100vw - 1200px) / 2));
 }
 
 #stories h2 {
-    color: var(--color-cream);
+    font-size: clamp(2.2rem, 3.8vw, 3rem);
+    color: var(--color-cream, #FAF7F1);
+    margin-bottom: 0.5rem;
+}
+
+#stories > p {
+    color: rgba(250, 247, 241, 0.85);
+    margin-bottom: 2rem;
 }
 
 #stories article {
-    max-width: 700px;
+    max-width: 750px;
+    background: rgba(0, 0, 0, 0.12);
+    padding: 2.5rem;
+    border-radius: var(--radius-md, 8px);
 }
 
 #stories article h3 {
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
 }
 
+#stories article p small {
+    color: rgba(250, 247, 241, 0.7);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#stories article a {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: #FAF7F1;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
 
 /* ============================================================
-   FINAL CTA
+   CALL TO ACTION (CTA)
    ============================================================ */
-
 #cta {
     max-width: none;
-
-    padding: 7rem 2rem;
-
+    margin-left: 0;
+    margin-right: 0;
+    padding: 6rem 1.5rem;
     text-align: center;
-
-    background: var(--color-sandstone);
+    background: #E8E0D2; /* Limestone */
 }
 
 #cta h2 {
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    color: var(--color-deep-brown, #352A24);
+    margin-bottom: 1rem;
 }
 
 #cta > p {
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 620px;
+    margin: 0 auto 2.5rem;
+    color: var(--text-muted, #6B5E55);
+    font-size: 1.05rem;
 }
 
+#cta div {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
 
-/* ============================================================
-   MOBILE
-   ============================================================ */
+#cta a[href*="explore"] {
+    background: var(--color-deep-brown, #352A24);
+    color: #FAF7F1;
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-weight: 500;
+}
 
-@media (max-width: 767px) {
-
-    #hero {
-        min-height: 85vh;
-
-        padding: 6rem 1.5rem;
-    }
-
-    #hero h1 {
-        font-size: 3rem;
-    }
-
-    #categories ul {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    #flyover-preview,
-    #stories,
-    #cta {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-    }
+#cta a[href*="register"] {
+    background: transparent;
+    color: var(--color-deep-brown, #352A24);
+    border: 1px solid var(--color-deep-brown, #352A24);
+    padding: 0.85rem 2rem;
+    border-radius: 4px;
+    font-weight: 500;
 }

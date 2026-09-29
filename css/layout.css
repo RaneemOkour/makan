@@ -28,7 +28,6 @@ header {
   background-color: var(--bg-main, #FAF7F1);
 }
 
-/* Brand Logo (Image / SVG Rules) */
 .brand-logo,
 header > a[aria-label="Makan Home"] {
   display: inline-flex;
@@ -44,7 +43,6 @@ header > a[aria-label="Makan Home"] img {
   object-fit: contain;
 }
 
-/* Primary Navigation Links */
 header nav[aria-label="Primary Navigation"] ul {
   display: flex;
   flex-wrap: wrap;
@@ -68,7 +66,6 @@ header nav[aria-label="Primary Navigation"] a:hover {
   color: var(--accent-color, #B9684B);
 }
 
-/* Action Links (Favorites & Sign In) */
 header > div {
   display: flex;
   align-items: center;
@@ -94,15 +91,15 @@ header > div a[href*="login.html"]:hover {
 }
 
 /* ==========================================================================
-   02.1 HERO SECTION (PERFECTLY CENTERED EDITORIAL)
+   02.1 HERO SECTION
    ========================================================================== */
 .hero-cinematic {
   position: relative;
   width: 100%;
-  min-height: 92vh;
+  min-height: 90vh;
   display: flex;
-  align-items: center;      /* توسيط عمودي في منتصف الشاشة */
-  justify-content: center;  /* توسيط أفقي */
+  align-items: center;
+  justify-content: center;
   text-align: center;
   overflow: hidden;
   margin-bottom: var(--space-xl, 3rem);
@@ -131,18 +128,17 @@ header > div a[href*="login.html"]:hover {
   z-index: 2;
 }
 
-/* الحاوية: تم توسيعها لتتسع للعنوان التحريري براحة */
 .hero-content {
   position: relative;
   z-index: 3;
   width: 100%;
-  max-width: 980px;         /* يعطي مساحة كافية للعنوان ليمتد مثل التصميم */
+  max-width: 980px;
   margin: 0 auto;
   padding: 3rem 1.5rem;
   color: var(--color-cream, #FAF7F1);
   display: flex;
   flex-direction: column;
-  align-items: center;      /* يضمن توسيط كل عنصر بداخله بدقة */
+  align-items: center;
 }
 
 .hero-badge {
@@ -155,7 +151,6 @@ header > div a[href*="login.html"]:hover {
   margin-bottom: 1.5rem;
 }
 
-/* العنوان التحريري الأنيق على سطرين متوازنين */
 .hero-title {
   font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
   font-size: clamp(2.4rem, 5.2vw, 4.2rem);
@@ -163,7 +158,7 @@ header > div a[href*="login.html"]:hover {
   line-height: 1.15;
   color: #FFFFFF;
   margin-bottom: 1.5rem;
-  max-width: 850px;         /* يتحكم بعدد الكلمات في كل سطر */
+  max-width: 850px;
   letter-spacing: 0.3px;
 }
 
@@ -219,100 +214,87 @@ header > div a[href*="login.html"]:hover {
   background: rgba(255, 255, 255, 0.25);
   border-color: #FAF7F1;
 }
+
 /* ==========================================================================
-   03. MAIN SECTIONS 
+   03. MAIN SECTIONS COMMON HEADERS
    ========================================================================== */
 main {
   display: flex;
   flex-direction: column;
-  gap: var(--space-xl, 3rem);
+  gap: var(--space-xl, 3.5rem);
   padding-top: 0;
   padding-bottom: var(--space-xl, 3rem);
 }
 
-main > section {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm, 1rem);
-}
-
-/* ==========================================================================
-   04. FEELINGS / MOOD SECTION (CLEAN 4-COLUMN EDITORIAL)
-   ========================================================================== */
-.feelings-section {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto 4rem;
-  padding: 0 1rem;
-}
-
 .section-header-center {
   text-align: center;
-  max-width: 620px;
+  max-width: 680px;
   margin: 0 auto 2.5rem;
 }
 
 .section-subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 0.8rem;
   font-weight: 600;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: #556B4F; /* Olive */
+  color: var(--color-olive, #556B4F);
   display: block;
   margin-bottom: 0.75rem;
 }
 
 .section-title {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
   font-size: clamp(2.2rem, 3.8vw, 3rem);
   font-weight: 400;
-  color: #352A24; /* Deep Brown */
+  color: var(--color-deep-brown, #352A24);
   margin: 0 0 0.75rem;
   line-height: 1.15;
 }
 
 .section-desc {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body, 'Inter', sans-serif);
   font-size: 1rem;
-  color: #6B5E55;
+  color: var(--text-muted, #6B5E55);
   line-height: 1.6;
   margin: 0 auto;
 }
 
-/* فرض التوزيع الأفقي إلى 4 أعمدة متساوية على الشاشات الكبيرة */
-.feelings-grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  gap: 1.5rem !important;
-  width: 100% !important;
+/* ==========================================================================
+   04. FEELINGS / MOOD SECTION (3 COLUMNS X 2 ROWS)
+   ========================================================================== */
+.feelings-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* بطاقة الصورة المستطيلة */
+.feelings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  width: 100%;
+}
+
 .feeling-card {
-  position: relative !important;
-  height: 440px !important;
-  border-radius: 6px !important;
-  overflow: hidden !important;
-  display: block !important;
-  text-decoration: none !important;
-  background: none !important;      /* إلغاء أي خلفية برتقالية قديمة */
-  background-color: transparent !important;
-  padding: 0 !important;           /* إلغاء أي مسافة تدفع الصورة */
-  border: none !important;
+  position: relative;
+  height: 400px;
+  border-radius: 6px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
 
-/* الصورة تملأ الصندوق بالكامل من الحافة للحافة */
 .feeling-card img {
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   transition: transform 0.45s ease;
 }
 
@@ -320,55 +302,163 @@ main > section {
   transform: scale(1.04);
 }
 
-/* طبقة تظليل مدمجة في أسفل الكرت لإبراز النص الأبيض */
 .feeling-card::after {
-  content: '' !important;
-  position: absolute !important;
-  inset: 0 !important;
+  content: '';
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     to top,
     rgba(20, 15, 12, 0.8) 0%,
     rgba(20, 15, 12, 0.2) 35%,
     transparent 65%
-  ) !important;
+  );
   pointer-events: none;
   z-index: 2;
 }
 
-/* عنوان الكرت في المنتصف بالأسفل */
 .feeling-card .card-label {
-  position: absolute !important;
-  bottom: 1.4rem !important;
-  left: 0 !important;
-  right: 0 !important;
-  text-align: center !important;
-  color: #FAF7F1 !important;
-  font-family: 'Inter', sans-serif !important;
-  font-size: 1.05rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.5px !important;
-  z-index: 3 !important;
-  display: block !important;
+  position: absolute;
+  bottom: 1.4rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #FAF7F1;
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  z-index: 3;
 }
 
-/* التجاوب مع شاشات الهواتف والتابلت */
-@media (max-width: 900px) {
-  .feelings-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-
-@media (max-width: 500px) {
-  .feelings-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .feeling-card {
-    height: 340px !important;
-  }
-}
 /* ==========================================================================
-   05. GLOBAL FOOTER
-   Based on Page 12 (Home Page Structure - Footer)
+   05. EXPERIENCES SECTION (MOMENTS YOU'LL CARRY HOME)
+   ========================================================================== */
+.experiences-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.experiences-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.exp-card {
+  background-color: #E2DBD0; /* بطاقة بدرجة Limestone هادئة ومريحة للنص */
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.exp-thumb {
+  width: 100%;
+  height: 220px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.exp-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.exp-card:hover .exp-thumb img {
+  transform: scale(1.05);
+}
+
+.exp-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.exp-body h3 {
+  font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-deep-brown, #352A24);
+  margin: 0 0 0.6rem;
+}
+
+.exp-body p {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-muted, #6B5E55);
+  margin: 0 0 1.25rem;
+  flex-grow: 1;
+}
+
+.exp-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.exp-tags .tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 0.25rem 0.6rem;
+  background-color: rgba(53, 42, 36, 0.08);
+  color: var(--color-deep-brown, #352A24);
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+.exp-body .btn-link {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-deep-brown, #352A24);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease;
+}
+
+.exp-body .btn-link:hover {
+  color: var(--color-terracotta, #B9684B);
+}
+
+.section-footer-center {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background-color: #E2DBD0;
+  color: var(--color-deep-brown, #352A24);
+  border: 1px solid rgba(53, 42, 36, 0.15);
+  padding: 0.85rem 2rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-deep-brown, #352A24);
+  color: #FAF7F1;
+}
+
+/* ==========================================================================
+   06. GLOBAL FOOTER
    ========================================================================== */
 footer {
   border-top: 1px solid var(--border-color, #E8E0D2);
@@ -417,8 +507,7 @@ footer > p {
 }
 
 /* ==========================================================================
-   06. RESPONSIVE BREAKPOINTS (Tablet & Desktop)
-   Mobile-first: Expanding layouts on larger screens
+   07. RESPONSIVE BREAKPOINTS (Tablet & Mobile)
    ========================================================================== */
 @media (min-width: 768px) {
   header {
@@ -446,5 +535,22 @@ footer > p {
   footer hr,
   footer > p {
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 992px) {
+  .feelings-grid,
+  .experiences-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .feelings-grid,
+  .experiences-grid {
+    grid-template-columns: 1fr;
+  }
+  .feeling-card {
+    height: 320px;
   }
 }
